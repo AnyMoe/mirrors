@@ -1,0 +1,33 @@
+{
+  "name": "@dglinux/mirrors-web",
+  "version": "0.1.0",
+  "description": "莞工 GNU/Linux 协会 开源软件镜像站",
+  "scripts": {
+    "dev": "next",
+    "prebuild": "node scripts/prebuild.js",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dglinux/mirrors-web.git"
+  },
+  "author": "Victorique Ko",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/dglinux/mirrors-web/issues"
+  },
+  "homepage": "https://github.com/dglinux/mirrors-web#readme",
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "material-ui": "^0.19.1",
+    "moment": "^2.18.1",
+    "next": "^3.2.2",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "normalize.css": "^7.0.0"
+  }
+}
