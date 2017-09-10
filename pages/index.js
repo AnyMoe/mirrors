@@ -22,22 +22,16 @@ export default class extends Component {
           color: white,
           textColor: darkBlack
         }
-      }),
-      mirrors: []
+      })
     };
   }
 
   static async getInitialProps({ req }) {
     return {
-      userAgent: req ? req.headers['user-agent'] : navigator.userAgent
-    };
-  }
-
-  async componentDidMount() {
-    this.setState({
+      userAgent: req ? req.headers['user-agent'] : navigator.userAgent,
       mirrors: (await (await fetch('https://api.dglinux.com/mirrors')).json())
         .sort((lhs, rhs) => lhs.name < rhs.name ? -1 : lhs.name > rhs.name ? 1 : 0)
-    });
+    };
   }
 
   render() {
@@ -140,7 +134,7 @@ export default class extends Component {
               </TableRow>
             </TableHeader>
             <TableBody displayRowCheckbox={false} showRowHover={true}>{
-              this.state.mirrors.map(mirror => (
+              this.props.mirrors.map(mirror => (
                 <TableRow key={mirror.id}>
                   <TableRowColumn>
                     <a href={mirror.href}>{mirror.name}</a>
