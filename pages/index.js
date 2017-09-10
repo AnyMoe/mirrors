@@ -35,7 +35,8 @@ export default class extends Component {
 
   async componentDidMount() {
     this.setState({
-      mirrors: await (await fetch('https://api.dglinux.com/mirrors')).json()
+      mirrors: (await (await fetch('https://api.dglinux.com/mirrors')).json())
+        .sort((lhs, rhs) => lhs.name < rhs.name ? -1 : lhs.name > rhs.name ? 1 : 0)
     });
   }
 
