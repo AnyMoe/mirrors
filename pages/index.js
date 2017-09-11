@@ -94,14 +94,12 @@ export default class extends Component {
             <Paper>
               <div className="bar">
                 <div className="container">
-                  <div className="row">
-                    <div className="col-sm-12 col-xs-12">
-                      <Link href="/">
-                        <a style={{ textDecoration: 'none', color: 'inherit' }}>
-                          <h1 className="header">莞工 GNU/Linux 协会 开源软件镜像站</h1>
-                        </a>
-                      </Link>
-                    </div>
+                  <div className="navbar-header">
+                    <Link href="/">
+                      <a style={{ textDecoration: 'none', color: 'inherit' }}>
+                        <h1 className="header">莞工 GNU/Linux 协会 开源软件镜像站</h1>
+                      </a>
+                    </Link>
                   </div>
                 </div>
               </div>
