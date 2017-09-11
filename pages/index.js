@@ -43,7 +43,7 @@ export default class extends Component {
 
         <style jsx>{`
           .header {
-            font-size: 24px;
+            font-size: 18px;
             line-height: 64px;
             margin: 0;
           }
@@ -74,6 +74,10 @@ export default class extends Component {
           }
 
           @media (min-width: 768px) {
+            .header {
+              font-size: 24px;
+            }
+
             .my-sm-5 {
               margin-top: calc(1rem * 3) !important;
               margin-bottom: calc(1rem * 3) !important;
@@ -87,7 +91,11 @@ export default class extends Component {
               <div className="container">
                 <div className="row">
                   <div className="col-sm-12 col-xs-12">
-                    <h1 className="header">莞工 GNU/Linux 协会 开源软件镜像站</h1>
+                    <Link href="/">
+                      <a style={{ textDecoration: 'none', color: 'inherit' }}>
+                        <h1 className="header">莞工 GNU/Linux 协会 开源软件镜像站</h1>
+                      </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -95,7 +103,7 @@ export default class extends Component {
             <div className="container">
               <div className="row">
                 <div className="col-sm-8 my-sm-5 col-xs-12 mt-5 mb-3">
-                  {this.renderMirrorsList()}
+                  {this.renderMirrorsList(this.props.mirrors)}
                 </div>
                 <div className="col-sm-4 my-sm-5 col-xs-12 mt-3 mb-5">
                   {this.renderAside()}
@@ -121,7 +129,7 @@ export default class extends Component {
     );
   }
 
-  renderMirrorsList() {
+  renderMirrorsList(mirrors) {
     return (
       <Card>
         <CardHeader title="镜像列表" avatar={(<ActionViewList />)} />
@@ -134,7 +142,7 @@ export default class extends Component {
               </TableRow>
             </TableHeader>
             <TableBody displayRowCheckbox={false} showRowHover={true}>{
-              this.props.mirrors.map(mirror => (
+              mirrors.map(mirror => (
                 <TableRow key={mirror.id}>
                   <TableRowColumn>
                     <a href={mirror.href}>{mirror.name}</a>
