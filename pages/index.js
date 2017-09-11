@@ -42,6 +42,10 @@ export default class extends Component {
         </Head>
 
         <style jsx>{`
+          .bar {
+            background-color: #f2f2f2;
+          }
+
           .header {
             font-size: 18px;
             line-height: 64px;
@@ -88,14 +92,16 @@ export default class extends Component {
         <MuiThemeProvider muiTheme={getMuiTheme(this.state.muiTheme, this.props.userAgent)}>
           <div>
             <Paper>
-              <div className="container">
-                <div className="row">
-                  <div className="col-sm-12 col-xs-12">
-                    <Link href="/">
-                      <a style={{ textDecoration: 'none', color: 'inherit' }}>
-                        <h1 className="header">莞工 GNU/Linux 协会 开源软件镜像站</h1>
-                      </a>
-                    </Link>
+              <div className="bar">
+                <div className="container">
+                  <div className="row">
+                    <div className="col-sm-12 col-xs-12">
+                      <Link href="/">
+                        <a style={{ textDecoration: 'none', color: 'inherit' }}>
+                          <h1 className="header">莞工 GNU/Linux 协会 开源软件镜像站</h1>
+                        </a>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -111,14 +117,16 @@ export default class extends Component {
               </div>
             </div>
             <Paper>
-              <div className="container py-5">
-                <div className="row">
-                  <div className="col-sm-8 col-xs-8">
-                    <p>本站由莞工 GNU/Linux 协会开发、运行与维护。</p>
-                    <p>感谢莞工 GNU/Linux 协会成员的不懈努力，感谢黄培灿老师提供的经费以及服务器，感谢大家热爱 Linux。</p>
-                  </div>
-                  <div className="col-sm-4 col-xs-4">
-                    <img className="img-responsive pull-right" src="/static/image/logo.png" />
+              <div className="bar">
+                <div className="container py-5">
+                  <div className="row">
+                    <div className="col-sm-8 col-xs-8">
+                      <p>本站由莞工 GNU/Linux 协会开发、运行与维护。</p>
+                      <p>感谢莞工 GNU/Linux 协会成员的不懈努力，感谢黄培灿老师提供的经费以及服务器，感谢大家热爱 Linux。</p>
+                    </div>
+                    <div className="col-sm-4 col-xs-4">
+                      <img className="img-responsive pull-right" src="/static/image/logo.png" />
+                    </div>
                   </div>
                 </div>
               </div>
